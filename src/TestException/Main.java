@@ -35,7 +35,7 @@ public class Main {
             String sqlStr = "select * from student";
             ResultSet rs = st.executeQuery(sqlStr);
             while (rs.next()) {
-                System.out.println(rs.getString("name"));
+                System.out.println(rs.getInt("id")+" / "+rs.getString("name")+" / "+rs.getString("birth_date")+" / "+rs.getString("ph_no"));
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -44,7 +44,7 @@ public class Main {
 
         // IO Exception
 
-        try {
+        try { 
             FileOutputStream fout = new FileOutputStream("intFile.txt");
             String s = "Welcome to javaTpoint.";
             byte b[] = s.getBytes();// converting string into byte array
